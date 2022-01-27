@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1613B8BB-A12E-4A40-ADD1-755966D84CD8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>HolmesRestorationManagementSystem</RootNamespace>
+    <AssemblyName>HolmesRestorationManagementSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.123\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=1.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.1.1.2\lib\net451\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=5.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.5.1.2\lib\net451\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=5.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.5.1.2\lib\net451\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.1\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Twilio, Version=5.70.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Twilio.5.70.0\lib\net451\Twilio.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business Objects\Assistance.cs" />
+    <Compile Include="Business Objects\Cooling.cs" />
+    <Compile Include="Business Objects\Credintials.cs" />
+    <Compile Include="Business Objects\Fencing.cs" />
+    <Compile Include="Business Objects\Heating.cs" />
+    <Compile Include="Business Objects\IClient.cs" />
+    <Compile Include="Business Objects\IResponse.cs" />
+    <Compile Include="Business Objects\Notifications.cs" />
+    <Compile Include="Business Objects\Occupancy.cs" />
+    <Compile Include="Business Objects\Parking.cs" />
+    <Compile Include="Business Objects\Property.cs" />
+    <Compile Include="Business Objects\Tenant.cs" />
+    <Compile Include="Business Objects\TruthValues.cs" />
+    <Compile Include="Business Objects\User.cs" />
+    <Compile Include="Business Objects\WorkNeeded.cs" />
+    <Compile Include="Data Access Layer\AssistanceDB.cs" />
+    <Compile Include="Data Access Layer\Connector.cs" />
+    <Compile Include="Data Access Layer\CoolingDB.cs" />
+    <Compile Include="Data Access Layer\FenceDB.cs" />
+    <Compile Include="Data Access Layer\HeatingDB.cs" />
+    <Compile Include="Data Access Layer\OccupancyDBcs.cs" />
+    <Compile Include="Data Access Layer\ParkingDB.cs" />
+    <Compile Include="Data Access Layer\PropertyDB.cs" />
+    <Compile Include="Data Access Layer\Protector.cs" />
+    <Compile Include="Data Access Layer\TenantDB.cs" />
+    <Compile Include="Data Access Layer\TruthValuesDB.cs" />
+    <Compile Include="Data Access Layer\UserDB.cs" />
+    <Compile Include="Data Access Layer\WorkNeededDB.cs" />
+    <Compile Include="HolmesRestorationDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HolmesRestorationDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Ui\AdminScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\AdminScreen.Designer.cs">
+      <DependentUpon>AdminScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\EditPropertyWorkForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\EditPropertyWorkForm.Designer.cs">
+      <DependentUpon>EditPropertyWorkForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\HelpScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\HelpScreen.Designer.cs">
+      <DependentUpon>HelpScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\MainInterface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\MainInterface.Designer.cs">
+      <DependentUpon>MainInterface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\NotificationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\NotificationForm.Designer.cs">
+      <DependentUpon>NotificationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\PasswordMaintenanceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\PasswordMaintenanceForm.Designer.cs">
+      <DependentUpon>PasswordMaintenanceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\PropertyMaintenanceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\PropertyMaintenanceForm.Designer.cs">
+      <DependentUpon>PropertyMaintenanceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\PropertyReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\PropertyReportForm.Designer.cs">
+      <DependentUpon>PropertyReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\PropertyViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\PropertyViewForm.Designer.cs">
+      <DependentUpon>PropertyViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\TenantMaintenanceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\TenantMaintenanceForm.Designer.cs">
+      <DependentUpon>TenantMaintenanceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\TenantReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\TenantReportForm.Designer.cs">
+      <DependentUpon>TenantReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\TenantViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\TenantViewForm.Designer.cs">
+      <DependentUpon>TenantViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\UserMaintenanceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\UserMaintenanceForm.Designer.cs">
+      <DependentUpon>UserMaintenanceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\WorkMaintenanceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\WorkMaintenanceForm.Designer.cs">
+      <DependentUpon>WorkMaintenanceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\WorkReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\WorkReportForm.Designer.cs">
+      <DependentUpon>WorkReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\WorkViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\WorkViewForm.Designer.cs">
+      <DependentUpon>WorkViewForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Ui\AdminScreen.resx">
+      <DependentUpon>AdminScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\EditPropertyWorkForm.resx">
+      <DependentUpon>EditPropertyWorkForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\HelpScreen.resx">
+      <DependentUpon>HelpScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\MainInterface.resx">
+      <DependentUpon>MainInterface.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\NotificationForm.resx">
+      <DependentUpon>NotificationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\PasswordMaintenanceForm.resx">
+      <DependentUpon>PasswordMaintenanceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\PropertyMaintenanceForm.resx">
+      <DependentUpon>PropertyMaintenanceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\PropertyReport.rdlc" />
+    <EmbeddedResource Include="Ui\PropertyReportForm.resx">
+      <DependentUpon>PropertyReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\PropertyViewForm.resx">
+      <DependentUpon>PropertyViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\TenantMaintenanceForm.resx">
+      <DependentUpon>TenantMaintenanceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\TenantReport.rdlc" />
+    <EmbeddedResource Include="Ui\TenantReportForm.resx">
+      <DependentUpon>TenantReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\TenantViewForm.resx">
+      <DependentUpon>TenantViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\UserMaintenanceForm.resx">
+      <DependentUpon>UserMaintenanceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\WorkMaintenanceForm.resx">
+      <DependentUpon>WorkMaintenanceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\WorkReport.rdlc" />
+    <EmbeddedResource Include="Ui\WorkReportForm.resx">
+      <DependentUpon>WorkReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\WorkViewForm.resx">
+      <DependentUpon>WorkViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="HolmesRestorationDataSet.xsc">
+      <DependentUpon>HolmesRestorationDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HolmesRestorationDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HolmesRestorationDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HolmesRestorationDataSet.xss">
+      <DependentUpon>HolmesRestorationDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HolmesRestoration.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="HolmesRestoration_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>HolmesRestoration.mdf</DependentUpon>
+    </Content>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
